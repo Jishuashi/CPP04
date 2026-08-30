@@ -1,0 +1,13 @@
+a.out
+*.txt
+.vscode/
+*.o
+*.yml
+*.plist
+obj
+*.log
+*.xml
+.idea
+*.replace
+*.vgcore
+polymorph                                                                                                                                                           
