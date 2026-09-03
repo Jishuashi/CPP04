@@ -6,14 +6,14 @@
 /*   By: hchartie <hchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/03 16:40:44 by hchartie          #+#    #+#             */
-/*   Updated: 2026/09/03 17:41:20 by hchartie         ###   ########.fr       */
+/*   Updated: 2026/09/03 18:54:35 by hchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/Animal.hpp"
 
-Animal::Animal() 
-{ 
+Animal::Animal()
+{
 	print_msg("An Animal was created");
 }
 
@@ -24,16 +24,18 @@ Animal::~Animal()
 
 Animal::Animal(const Animal &pToCopy)
 {
-	print_msg("An Animal was destruct");
+	print_msg("An Animal was Copied");
 	type = pToCopy.type;
+	brain = pToCopy.brain;
 }
 
 Animal &Animal::operator=(const Animal &pOther)
 {
+	print_msg("An Animal was Assigned");
 	if (this != &pOther)
 	{
-		print_msg("An Animal was Assigned");
 		this->type = pOther.type;
+		this->brain = pOther.brain;
 	}
 	return (*this);
 }

@@ -1,49 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hchartie <hchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/03 16:40:44 by hchartie          #+#    #+#             */
-/*   Updated: 2026/09/03 17:41:20 by hchartie         ###   ########.fr       */
+/*   Created: 2026/08/30 02:25:01 by hchartie          #+#    #+#             */
+/*   Updated: 2026/09/03 18:56:55 by hchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/Animal.hpp"
+#include "includes/Dog.hpp"
 
-Animal::Animal() 
+Dog::Dog() : Animal()
 { 
-	print_msg("An Animal was created");
+	type = "Dog";
+	brain = new Brain();
+	print_msg("A Dog was created");
 }
 
-Animal::~Animal() 
+Dog::~Dog() 
 {
-	print_msg("An Animal was destruct");
+	print_msg("A Dog was Destruct");
+	delete brain;
 }
 
-Animal::Animal(const Animal &pToCopy)
+Dog::Dog(const Dog &pToCopy) : Animal(pToCopy)
 {
-	print_msg("An Animal was destruct");
+	print_msg("A Dog was copied");
 	type = pToCopy.type;
 }
 
-Animal &Animal::operator=(const Animal &pOther)
+Dog &Dog::operator=(const Dog &pOther)
 {
 	if (this != &pOther)
 	{
-		print_msg("An Animal was Assigned");
+		print_msg("A Dog was Assigned");
 		this->type = pOther.type;
 	}
 	return (*this);
 }
 
-std::string Animal::getType() const
+void Dog::makeSound() const
 {
-	return (type);
-}
-
-void Animal::makeSound() const
-{
-	print_msg("This animal doesn't make a sound");
+	print_msg("Woooooooooooof");
 }
