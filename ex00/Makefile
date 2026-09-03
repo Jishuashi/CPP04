@@ -11,6 +11,8 @@ SRCS        = 					\
 				Dog.cpp			\
 				Cat.cpp			\
 				utils.cpp		\
+				WrongAnimal.cpp	\
+				WrongCat.cpp	\
 
 OBJS        = $(SRCS:%.cpp=obj/%.o)
 

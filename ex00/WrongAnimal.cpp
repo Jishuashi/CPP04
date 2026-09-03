@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   WrongWrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hchartie <hchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/03 16:40:44 by hchartie          #+#    #+#             */
-/*   Updated: 2026/09/03 16:40:45 by hchartie         ###   ########.fr       */
+/*   Created: 2026/09/03 16:36:06 by hchartie          #+#    #+#             */
+/*   Updated: 2026/09/03 16:40:55 by hchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/Animal.hpp"
+#include "includes/WrongAnimal.hpp"
 
-Animal::Animal() 
+WrongAnimal::WrongAnimal() 
 { 
-	print_msg("An Animal was created");
+	print_msg("An WrongAnimal was created");
 }
 
-Animal::~Animal() { }
+WrongAnimal::~WrongAnimal() { }
 
-Animal::Animal(const Animal &pToCopy)
+WrongAnimal::WrongAnimal(const WrongAnimal &pToCopy)
 {
 	type = pToCopy.type;
 }
 
-Animal &Animal::operator=(const Animal &pOther)
+WrongAnimal &WrongAnimal::operator=(const WrongAnimal &pOther)
 {
 	if (this != &pOther)
 	{
@@ -33,12 +33,12 @@ Animal &Animal::operator=(const Animal &pOther)
 	return (*this);
 }
 
-std::string Animal::getType() const
+std::string WrongAnimal::getType() const
 {
 	return (type);
 }
 
-void Animal::makeSound() const
+void WrongAnimal::makeSound() const
 {
-	print_msg("This animal doesn't make a sound");
+	print_msg("This WrongAnimal doesn't make a sound");
 }

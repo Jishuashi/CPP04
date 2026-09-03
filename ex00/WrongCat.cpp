@@ -1,44 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hchartie <hchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/03 16:40:44 by hchartie          #+#    #+#             */
-/*   Updated: 2026/09/03 16:40:45 by hchartie         ###   ########.fr       */
+/*   Created: 2026/09/03 16:46:38 by hchartie          #+#    #+#             */
+/*   Updated: 2026/09/03 16:55:04 by hchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/Animal.hpp"
+#include "includes/WrongCat.hpp"
 
-Animal::Animal() 
+WrongCat::WrongCat() : WrongAnimal()
 { 
-	print_msg("An Animal was created");
+	type = "WrongCat";
+	print_msg("A WrongCat was created");
 }
 
-Animal::~Animal() { }
-
-Animal::Animal(const Animal &pToCopy)
+WrongCat::~WrongCat() 
 {
+	print_msg("A WrongCat was Destruct");
+}
+
+WrongCat::WrongCat(const WrongCat &pToCopy) : WrongAnimal(pToCopy)
+{
+	print_msg("A WrongCat was copied");
 	type = pToCopy.type;
 }
 
-Animal &Animal::operator=(const Animal &pOther)
+WrongCat &WrongCat::operator=(const WrongCat &pOther)
 {
 	if (this != &pOther)
 	{
+		print_msg("A WrongCat was Assigned");
 		this->type = pOther.type;
 	}
 	return (*this);
 }
 
-std::string Animal::getType() const
+void WrongCat::makeSound() const
 {
-	return (type);
-}
-
-void Animal::makeSound() const
-{
-	print_msg("This animal doesn't make a sound");
+	print_msg("Meooooooow");
 }

@@ -1,19 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   polymorph.hpp                                      :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hchartie <hchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/30 02:02:57 by hchartie          #+#    #+#             */
-/*   Updated: 2026/09/03 16:47:42 by hchartie         ###   ########.fr       */
+/*   Created: 2026/09/03 16:38:25 by hchartie          #+#    #+#             */
+/*   Updated: 2026/09/03 16:55:26 by hchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef POLYMORPH_HPP
-# define POLYMORPH_HPP
-# include "Cat.hpp"
-# include "Dog.hpp"
-# include "WrongCat.hpp"
+#ifndef WRONGCAT_HPP
+# define WRONGCAT_HPP
+# include "WrongAnimal.hpp"
+
+class WrongCat : public WrongAnimal
+{
+public:
+	WrongCat();
+	~WrongCat();
+
+	WrongCat(const WrongCat &pToCopy);
+	WrongCat& operator=(const WrongCat &pOther);
+
+	void	makeSound() const;
+};
 
 #endif

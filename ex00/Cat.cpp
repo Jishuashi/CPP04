@@ -6,7 +6,7 @@
 /*   By: hchartie <hchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/30 02:25:01 by hchartie          #+#    #+#             */
-/*   Updated: 2026/08/30 02:41:14 by hchartie         ###   ########.fr       */
+/*   Updated: 2026/09/03 16:35:27 by hchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@ Cat::Cat() : Animal()
 
 Cat::~Cat() 
 {
-	print_msg("A cat was Destruct");
+	print_msg("A Cat was Destruct");
 }
 
 Cat::Cat(const Cat &pToCopy) : Animal(pToCopy)
 {
-	print_msg("A cat was copied");
+	print_msg("A Cat was copied");
 	type = pToCopy.type;
 }
 
@@ -33,7 +33,7 @@ Cat &Cat::operator=(const Cat &pOther)
 {
 	if (this != &pOther)
 	{
-		print_msg("A cat was Assigned");
+		print_msg("A Cat was Assigned");
 		this->type = pOther.type;
 	}
 	return (*this);
