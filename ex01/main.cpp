@@ -6,7 +6,7 @@
 /*   By: hchartie <hchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/30 02:00:27 by hchartie          #+#    #+#             */
-/*   Updated: 2026/09/03 18:53:20 by hchartie         ###   ########.fr       */
+/*   Updated: 2026/09/18 18:29:29 by hchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 int main()
 {
 	{
+		print_msg("\033[0;32mSubject test\033[0m");
 		const Animal* j = new Dog();
 		const Animal* i = new Cat();
 
@@ -22,6 +23,7 @@ int main()
 		delete i;
 	}
 	{
+		print_msg("\n\n\033[0;32mOwn test\033[0m");
 		Animal*	animalList[10];
 		int		i = 0;
 
@@ -38,9 +40,32 @@ int main()
 		{
 			print_msg(animalList[i]->getType());
 			animalList[i]->makeSound();
+			i++;
+		}
+		i = 0;
+		while (i < 10)
+		{
 			delete animalList[i];
 			i++;
-		}	
+		}
+	}
+	{
+    	print_msg("\n\n\033[0;32mAssignment test\033[0m");
+    	Dog a;
+    	Dog b;
+    	b = a;
+    	std::cout << "a type: " << a.getType() << std::endl;
+    	std::cout << "b type: " << b.getType() << std::endl;
+	} 
+	{
+		print_msg("\n\n\033[0;32mDeep Copy test\033[0m");
+		Dog basic;
+
+    	{
+        	Dog tmp = basic;
+        	std::cout << "tmp type: " << tmp.getType() << std::endl;
+    	}
+   		std::cout << "basic type: " << basic.getType() << std::endl;
 	}
 	return (0);
 }

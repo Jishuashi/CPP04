@@ -6,7 +6,7 @@
 /*   By: hchartie <hchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/30 02:25:01 by hchartie          #+#    #+#             */
-/*   Updated: 2026/09/03 18:56:55 by hchartie         ###   ########.fr       */
+/*   Updated: 2026/09/18 18:32:45 by hchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ Dog::~Dog()
 	delete brain;
 }
 
-Dog::Dog(const Dog &pToCopy) : Animal(pToCopy)
+Dog::Dog(const Dog &pToCopy) : Animal(pToCopy), brain(new Brain(*pToCopy.brain))
 {
 	print_msg("A Dog was copied");
 	type = pToCopy.type;
@@ -36,7 +36,8 @@ Dog &Dog::operator=(const Dog &pOther)
 	if (this != &pOther)
 	{
 		print_msg("A Dog was Assigned");
-		this->type = pOther.type;
+		Animal::operator=(pOther);
+		*(this->brain) = *(pOther.brain);
 	}
 	return (*this);
 }

@@ -6,7 +6,7 @@
 /*   By: hchartie <hchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/03 17:26:35 by hchartie          #+#    #+#             */
-/*   Updated: 2026/09/03 18:57:45 by hchartie         ###   ########.fr       */
+/*   Updated: 2026/09/18 18:28:22 by hchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ Brain::~Brain()
 Brain::Brain(const Brain &pToCopy)
 {
 	print_msg("A Brain was copied");
-	for (size_t i = 0; i < ideas->length(); i++)
+	for (size_t i = 0; i < 100; i++)
 			this->ideas[i] = pToCopy.ideas[i];
 }
 
@@ -34,7 +34,7 @@ Brain& Brain::operator=(const Brain &pOther)
 	print_msg("A Brain was assigned");
 	if (this != &pOther)
 	{
-		for (size_t i = 0; i < ideas->length(); i++)
+		for (size_t i = 0; i < 100; i++)
 			this->ideas[i] = pOther.ideas[i];
 	}
 	return (*this);

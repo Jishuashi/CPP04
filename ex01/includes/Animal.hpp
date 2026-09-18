@@ -6,7 +6,7 @@
 /*   By: hchartie <hchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/30 02:02:57 by hchartie          #+#    #+#             */
-/*   Updated: 2026/09/03 18:09:37 by hchartie         ###   ########.fr       */
+/*   Updated: 2026/09/18 18:25:08 by hchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ class Animal
 {
 protected:
 	std::string type;
-	Brain		*brain;
 public:
 	Animal();
 	virtual ~Animal();
